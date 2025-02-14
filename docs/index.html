@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do You Wanna Go Out With Me?</title>
+  <title>will u be mine forivir?</title>
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
   <style>
     body {
@@ -123,12 +123,14 @@
       <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Cute Capoo GIF">
     </div>
     <div class="buttons">
+      <!-- Прибрали onmouseover з HTML -->
       <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-      <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+      <button class="btn" id="noButton">No</button>
     </div>
   </div>
 
   <script>
+    // Функція переходу на наступну сторінку
     function nextPage() {
       document.body.innerHTML = `
         <div class="container">
@@ -139,6 +141,7 @@
         </div>`;
     }
 
+    // Функція переміщення кнопки
     function moveButton() {
       let button = document.getElementById("noButton");
       let x = Math.random() * (window.innerWidth - button.clientWidth);
@@ -146,14 +149,27 @@
       button.style.position = "absolute";
       button.style.left = `${x}px`;
       button.style.top = `${y}px`;
+      // Скидаємо фокус, щоб кнопка не залипала
+      button.blur();
     }
 
-    // Додамо обробку події для мобільних пристроїв
-    document.getElementById("noButton").addEventListener("touchstart", function(e) {
-      e.preventDefault(); // запобігаємо стандартній поведінці дотику
-      moveButton();
+    // Коли DOM завантажиться, додамо обробники подій
+    document.addEventListener('DOMContentLoaded', () => {
+      const noButton = document.getElementById("noButton");
+
+      // Подія наведення для десктопів
+      noButton.addEventListener("mouseover", moveButton);
+
+      // Подія торкання для мобільних
+      noButton.addEventListener("touchstart", (e) => {
+        e.preventDefault();  // вимикаємо стандартну поведінку
+        moveButton();
+      });
     });
   </script>
 </body>
 </html>
 
+    </script>
+</body>
+</html>
