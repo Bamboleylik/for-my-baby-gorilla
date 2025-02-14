@@ -120,7 +120,7 @@
   <div class="container">
     <h1 class="header_text">will u bi mine forivir?</h1>
     <div class="gif_container">
-      <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Cute Capoo GIF">
+      <img src="https://www.icegif.com/wp-content/uploads/2023/05/icegif-190.gif">
     </div>
     <div class="buttons">
       <!-- Прибрали onmouseover з HTML -->
@@ -130,18 +130,18 @@
   </div>
 
   <script>
-    // Функція переходу на наступну сторінку
+  
     function nextPage() {
       document.body.innerHTML = `
         <div class="container">
           <h1 class="header_text">Let's go!</h1>
           <div class="gif_container">
-            <img src="https://media.tenor.com/YTw87WdiaasAAAAi/tkthao219-capoo.gif" alt="Happy Capoo GIF">
+            <img src="https://gifsec.com/wp-content/uploads/2022/09/i-love-you-gif-1.gif">
           </div>
         </div>`;
     }
 
-    // Функція переміщення кнопки
+   
     function moveButton() {
       let button = document.getElementById("noButton");
       let x = Math.random() * (window.innerWidth - button.clientWidth);
@@ -149,20 +149,20 @@
       button.style.position = "absolute";
       button.style.left = `${x}px`;
       button.style.top = `${y}px`;
-      // Скидаємо фокус, щоб кнопка не залипала
+     
       button.blur();
     }
 
-    // Коли DOM завантажиться, додамо обробники подій
+  
     document.addEventListener('DOMContentLoaded', () => {
       const noButton = document.getElementById("noButton");
 
-      // Подія наведення для десктопів
+     
       noButton.addEventListener("mouseover", moveButton);
 
-      // Подія торкання для мобільних
+      
       noButton.addEventListener("touchstart", (e) => {
-        e.preventDefault();  // вимикаємо стандартну поведінку
+        e.preventDefault();  
         moveButton();
       });
     });
